@@ -1,25 +1,46 @@
-import * as React from "react"
+// components/chat/input.tsx
+"use client";
 
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { ArrowUp } from "lucide-react";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+interface ChatInputProps {
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  input: string;
+  isLoading: boolean;
+}
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
-    return (
+export default function ChatInput({
+  handleInputChange,
+  handleSubmit,
+  input,
+  isLoading,
+}: ChatInputProps) {
+  const [isFocused, setIsFocused] = useState(false);
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className={`flex-0 flex w-full p-2 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900`}
+    >
       <input
-        type={type}
-        className={cn(
-          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className
-        )}
-        ref={ref}
-        {...props}
+        type="text"
+        value={input}
+        onChange={handleInputChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        placeholder="Type your message here..."
+        disabled={isLoading}
+        className="flex-grow px-3 py-2 bg-white text-black dark:bg-white dark:text-black rounded-l focus:outline-none placeholder-gray-500"
       />
-    )
-  }
-)
-Input.displayName = "Input"
-
-export { Input }
+      <button
+        type="submit"
+        disabled={input.trim() === "" || isLoading}
+        className="px-4 py-2 bg-white text-black border-l border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-300 transition-colors rounded-r"
+      >
+        <ArrowUp className="w-5 h-5 text-black" />
+      </button>
+    </form>
+  );
+}
