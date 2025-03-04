@@ -17,12 +17,10 @@ export default function Chat() {
   } = useApp();
 
   return (
-    <>
+    <div className="min-h-screen w-full bg-gradient-to-b from-blue-50 via-blue-300 to-blue-50 text-gray-900 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100">
       <ChatHeader clearMessages={clearMessages} />
-      <div className="flex justify-center items-center h-screen">
-        <div className="flex flex-col max-w-screen-lg w-full h-full p-5">
-          <ChatMessages messages={messages} indicatorState={indicatorState} />
-        </div>
+      <div className="flex flex-col justify-center items-center min-h-screen pt-16 px-5">
+        <ChatMessages messages={messages} indicatorState={indicatorState} />
       </div>
       <ChatInput
         handleInputChange={handleInputChange}
@@ -30,7 +28,8 @@ export default function Chat() {
         input={input}
         isLoading={isLoading}
       />
-    </>
+    </div>
   );
 }
+
 
