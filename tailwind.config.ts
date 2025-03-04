@@ -1,8 +1,7 @@
-// tailwind.config.ts
 import { type Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "media", // Use OS-level preference for dark mode
+  darkMode: "class", // Changed from "media" to "class" for manual dark mode toggling
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
