@@ -18,7 +18,7 @@ export default function Chat() {
   } = useApp();
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-blue-50 via-blue-100 to-blue-50 text-gray-900 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100">
+    <div className="min-h-screen w-full bg-gradient-to-b from-blue-50 via-blue-300 to-blue-50 text-gray-900 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100">
       {/* The updated ChatHeader with End Conversation + Dark Mode toggle */}
       <ChatHeader clearMessages={clearMessages} />
 
