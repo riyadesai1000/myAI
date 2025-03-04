@@ -17,10 +17,12 @@ export default function Chat() {
   } = useApp();
 
   return (
-    <>
+    // Outer container with custom background and text color
+    <div className="min-h-screen w-full bg-blue-100 text-gray-900">
       <ChatHeader clearMessages={clearMessages} />
-      <div className="flex justify-center items-center h-screen">
-        <div className="flex flex-col max-w-screen-lg w-full h-full p-5">
+      <div className="flex justify-center items-center min-h-screen pt-16">
+        <div className="flex flex-col max-w-screen-lg w-full h-full p-5 bg-white rounded shadow-lg">
+          {/* Chat message box with a white background, rounded corners, and a subtle shadow */}
           <ChatMessages messages={messages} indicatorState={indicatorState} />
         </div>
       </div>
@@ -30,6 +32,6 @@ export default function Chat() {
         input={input}
         isLoading={isLoading}
       />
-    </>
+    </div>
   );
 }
