@@ -1,6 +1,5 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { ArrowUp } from "lucide-react";
@@ -30,7 +29,7 @@ export default function ChatInput({
 
   return (
     <>
-      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-white shadow-[0_-10px_15px_-2px_rgba(255,255,255,1)] text-base">
+      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-white dark:bg-gray-900 shadow-[0_-10px_15px_-2px_rgba(255,255,255,1)] text-base">
         <div className="max-w-screen-lg w-full">
           <Form {...form}>
             <form
@@ -45,14 +44,15 @@ export default function ChatInput({
                 render={({ field }) => (
                   <FormItem className="flex-grow">
                     <FormControl>
-                      <Input
+                      {/* Using native input element */}
+                      <input
                         {...field}
                         onChange={handleInputChange}
                         value={input}
-                        className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent"
+                        className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent placeholder-gray-500 dark:placeholder-gray-400"
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
-                        placeholder="Ask me more about Warby Parker glass frames!"
+                        placeholder="Type your message here..."
                       />
                     </FormControl>
                   </FormItem>
