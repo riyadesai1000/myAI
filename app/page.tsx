@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import ChatInput from "@/components/chat/input";
 import ChatMessages from "@/components/chat/messages";
-import useApp from "@/hooks/use-app";
 import ChatHeader from "@/components/chat/header";
+import SuggestionsBox from "@/components/chat/SuggestionsBox";
+import useApp from "@/hooks/use-app";
 
 export default function Chat() {
   const {
@@ -16,12 +18,38 @@ export default function Chat() {
     clearMessages,
   } = useApp();
 
+  // Define a list of suggestion prompts
+  const suggestions = [
+    "What is VisionMate?",
+    "What are Warby Parker's most popular frames?",
+    "What is the Buy a Pair, Give a Pair?",
+    "What can you do?",
+    "What is Warby Parker?",
+  ];
+
+  // When a suggestion is clicked, we simulate an input change event to update the text box.
+  const onSelectSuggestion = (suggestion: string) => {
+    const syntheticEvent = {
+      target: { value: suggestion },
+    } as React.ChangeEvent<HTMLInputElement>;
+    handleInputChange(syntheticEvent);
+  };
+
   return (
-    // Use Tailwind's gradient classes to create a vertical ombre effect
-    <div className="min-h-screen w-full bg-gradient-to-b from-blue-50 via-blue-300 to-blue-50 text-gray-900">
+    <>
       <ChatHeader clearMessages={clearMessages} />
-      <div className="flex flex-col justify-center items-center min-h-screen pt-16 px-5">
-        <ChatMessages messages={messages} indicatorState={indicatorState} />
+      <div className="flex justify-center items-center h-screen bg-gradient-to-b from-blue-50 via-blue-300 to-blue-50 text-gray-900">
+        <div className="flex flex-col max-w-screen-lg w-full h-full p-5">
+          <ChatMessages messages={messages} indicatorState={indicatorState} />
+
+          {/* Suggestions Box Section */}
+          <div className="mt-4">
+            <SuggestionsBox
+              suggestions={suggestions}
+              onSelect={onSelectSuggestion}
+            />
+          </div>
+        </div>
       </div>
       <ChatInput
         handleInputChange={handleInputChange}
@@ -29,6 +57,6 @@ export default function Chat() {
         input={input}
         isLoading={isLoading}
       />
-    </div>
+    </>
   );
 }
