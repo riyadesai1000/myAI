@@ -25,7 +25,6 @@ export function getFrameLink(frameName: string): string {
     "Elias":       "(https://www.warbyparker.com/eyeglasses/elias/striped-cypress?w=medium)",
     "Mattie":      "(https://www.warbyparker.com/eyeglasses/mattie/mountain-blue?w=wide)",
     "Brimmer":     "(https://www.warbyparker.com/eyeglasses/brimmer/black-walnut?w=medium)",
-    "Simon":       "(https://www.warbyparker.com/eyeglasses/simon/antique-silver?w=medium)",
     "Tobias":      "(https://www.warbyparker.com/eyeglasses/tobias/seaweed-crystal?w=medium)",
     "Santiago":    "(https://www.warbyparker.com/eyeglasses/santiago/crystal-with-polished-gold?w=wide)",
     "Waite":       "(https://www.warbyparker.com/eyeglasses/waite/antique-silver?w=narrow)",
