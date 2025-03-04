@@ -1,6 +1,6 @@
-// components/chat/input.tsx
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { ArrowUp } from "lucide-react";
 
@@ -22,9 +22,10 @@ export default function ChatInput({
   return (
     <form
       onSubmit={handleSubmit}
-      className={`flex-0 flex w-full p-2 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900`}
+      className="p-4 flex items-center bg-white dark:bg-gray-900 shadow-sm border-t border-gray-200 dark:border-gray-700"
     >
       <input
+        className="flex-grow bg-transparent border-none focus:outline-none px-3 py-2 text-black dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
         type="text"
         value={input}
         onChange={handleInputChange}
@@ -32,15 +33,16 @@ export default function ChatInput({
         onBlur={() => setIsFocused(false)}
         placeholder="Type your message here..."
         disabled={isLoading}
-        className="flex-grow px-3 py-2 bg-white text-black dark:bg-white dark:text-black rounded-l focus:outline-none placeholder-gray-500"
       />
-      <button
+      <Button
         type="submit"
-        disabled={input.trim() === "" || isLoading}
-        className="px-4 py-2 bg-white text-black border-l border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-300 transition-colors rounded-r"
+        disabled={isLoading || input.trim() === ""}
+        className="ml-2 flex items-center gap-1 px-4 py-2 bg-white text-black dark:bg-gray-800 dark:text-gray-100 border border-gray-300 dark:border-gray-700 rounded shadow-sm"
       >
-        <ArrowUp className="w-5 h-5 text-black" />
-      </button>
+        <ArrowUp className="w-5 h-5" />
+        Send
+      </Button>
     </form>
   );
 }
+
