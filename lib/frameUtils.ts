@@ -4,7 +4,7 @@ export function getFrameLink(frameName: string): string {
   const links: Record<string, string> = {
     "Gillian":     "https://www.warbyparker.com/eyeglasses/gillian/teal-tortoise?w=medium",
     "Daisy":       "https://www.warbyparker.com/eyeglasses/daisy/tea-rose-fade?w=medium",
-    "Durand":      "https://www.warbyparker.com/eyeglasses/durand/whiskey-tortoise?w=medium
+    "Durand":      "https://www.warbyparker.com/eyeglasses/durand/whiskey-tortoise?w=medium",
     "Bodie":       "https://www.warbyparker.com/eyeglasses/bodie/crystal-with-english-oak?w=medium",
     "Crane":       "https://www.warbyparker.com/eyeglasses/crane/black-matte-eclipse?w=medium",
     "Percey":      "https://www.warbyparker.com/eyeglasses/percey/chestnut-crystal?w=medium",
