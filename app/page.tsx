@@ -18,7 +18,7 @@ export default function Chat() {
 
   return (
     // Use Tailwind's gradient classes to create a vertical ombre effect
-    <div className="min-h-screen w-full bg-gradient-to-b from-blue-25 via-blue-75 to-blue-25 text-gray-900">
+    <div className="min-h-screen w-full bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200 text-gray-900">
       <ChatHeader clearMessages={clearMessages} />
       <div className="flex flex-col justify-center items-center min-h-screen pt-16 px-5">
         <ChatMessages messages={messages} indicatorState={indicatorState} />
