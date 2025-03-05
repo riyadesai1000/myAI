@@ -42,7 +42,7 @@ export function getFrameImage(frameName: string): FrameImage {
     "Welty":       "https://www.warbyparker.com/eyeglasses/welty/eastern-bluebird-fade?w=medium",
     "Wright":      "https://www.warbyparker.com/eyeglasses/wright/rosemary-crystal?w=medium",
     "Freddy":      "https://www.warbyparker.com/eyeglasses/freddy/ristretto-tortoise?w=wide",
-    "Celeste":     "https://www.warbyparker.com/eyeglasses/celeste/celestial-blue?w=medium",
+    "Hughes":      "https://www.warbyparker.com/eyeglasses/hughes/chestnut-crystal?w=medium",
     "Blakeley":    "https://www.warbyparker.com/eyeglasses/blakeley/violet-magnolia?w=medium",
     "Maren":       "https://www.warbyparker.com/eyeglasses/ember/fiery-amber?w=medium",
     "Ames":        "https://www.warbyparker.com/eyeglasses/ames/whiskey-tortoise-with-riesling?w=wide",
