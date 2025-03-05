@@ -99,8 +99,13 @@ export default function ChatMessages({
           </motion.div>
         ))
       )}
-      {showLoading && <Loading indicatorState={indicatorState} />}
+      {showLoading && (
+        <div className="flex flex-col items-end text-right">
+          <Loading indicatorState={indicatorState} />
+        </div>
+      )}
       <div className="h-[225px]"></div>
     </motion.div>
   );
 }
+
