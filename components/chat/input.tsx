@@ -8,8 +8,9 @@ import { ArrowUp } from "lucide-react";
 import ChatFooter from "@/components/chat/footer";
 
 interface ChatInputProps {
+  // Parent's handleInputChange is unchanged.
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  // Updated: handleSubmit now expects an object with a "message" property
+  // Parent's handleSubmit now must accept an object with a "message" property.
   handleSubmit: (data: { message: string }) => Promise<void>;
   isLoading: boolean;
 }
@@ -62,7 +63,7 @@ export default function ChatInput({
             <Button
               type="submit"
               className="rounded-full w-10 h-10 p-0 flex items-center justify-center"
-              disabled={formHandleSubmit(() => {}) ? false : isLoading} // Disabled condition can be customized as needed
+              disabled={formHandleSubmit(() => {}) === undefined || isLoading}
             >
               <ArrowUp className="w-5 h-5" />
             </Button>
@@ -73,4 +74,3 @@ export default function ChatInput({
     </div>
   );
 }
-
