@@ -41,7 +41,9 @@ function AssistantMessage({ message }: { message: DisplayMessage }) {
       transition={{ duration: 0.3 }}
       className="flex flex-1 py-1 justify-start gap-[5px]"
     >
-      <div className="w-9 flex items-end">{<AILogo />}</div>
+      <div className="w-9 flex items-end">
+        <AILogo />
+      </div>
       <motion.div
         whileHover={{ scale: 1.01 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -100,12 +102,15 @@ export default function ChatMessages({
         ))
       )}
       {showLoading && (
-        <div className="flex flex-col items-end text-right">
-          <Loading indicatorState={indicatorState} />
+        <div className="w-full flex justify-end">
+          <div className="flex flex-col text-right">
+            <Loading indicatorState={indicatorState} />
+          </div>
         </div>
       )}
       <div className="h-[225px]"></div>
     </motion.div>
   );
 }
+
 
