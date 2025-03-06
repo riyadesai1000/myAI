@@ -2,7 +2,7 @@
 
 import ChatInput from "@/components/chat/input";
 import ChatMessages from "@/components/chat/messages";
-import ShoppingCart from "@/components/ShoppingCart"; // Import the ShoppingCart component
+import ShoppingCart from "@/components/chat/ShoppingCart";
 import useApp from "@/hooks/use-app";
 import ChatHeader from "@/components/chat/header";
 
