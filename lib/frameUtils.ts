@@ -1,4 +1,5 @@
 export interface FrameImage {
+  frame: string; // canonical frame name
   url: string;
   alt: string;
 }
@@ -55,10 +56,11 @@ export function getFrameImage(frameName: string): FrameImage {
       return links[key];
     }
   }
-  // If frame not found, return default (or you could return undefined)
+  // If frame not found, return a default FrameImage.
   return {
+    frame: frameName,
     url: "https://www.warbyparker.com/eyeglasses/default-frame?w=medium",
-    alt: `${frameName} frame`
+    alt: `${frameName} frame`,
   };
 }
 
