@@ -20,17 +20,24 @@ export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
   const addToCart = () => {
     const trimmed = frameName.trim();
     if (!trimmed) return;
-    const frameData = getFrameImage(trimmed);
-    // Only add if frameData exists and not already in cart (case-insensitive)
+    const frameData: FrameImage | undefined = getFrameImage(trimmed);
+    // Only add if a canonical match is found and it's not already in the cart (case-insensitive)
     if (frameData && !cart.some(item => item.frame.toLowerCase() === frameData.frame.toLowerCase())) {
       setCart(prev => [...prev, { frame: frameData.frame, url: frameData.url }]);
     }
     setFrameName("");
   };
 
+  const clearCart = () => setCart([]);
+
   return (
     <div className="p-4 border rounded shadow-md bg-white dark:bg-gray-800 w-full max-w-md">
-      <h2 className="text-xl font-bold mb-2">Shopping Cart</h2>
+      <div className="flex justify-between items-center mb-2">
+        <h2 className="text-xl font-bold">Shopping Cart</h2>
+        <button onClick={clearCart} className="text-red-600 text-sm underline">
+          Clear Cart
+        </button>
+      </div>
       <div className="flex flex-col sm:flex-row items-stretch gap-2 mb-4">
         <input
           type="text"
