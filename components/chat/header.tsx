@@ -6,7 +6,7 @@ import { EraserIcon } from "lucide-react";
 import Image from "next/image";
 import { CHAT_HEADER, CLEAR_BUTTON_TEXT } from "@/configuration/ui";
 import { AI_NAME } from "@/configuration/identity";
-import ShoppingCartButton from "@/components/ShoppingCartButton";
+import ShoppingCartButton from "@/components/chat/ShoppingCartButton";
 
 interface ChatHeaderProps {
   clearMessages: () => void;
