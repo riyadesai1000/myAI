@@ -1,5 +1,5 @@
 export interface FrameImage {
-  frame: string; // canonical frame name
+  frame: string; // canonical name
   url: string;
   alt: string;
 }
@@ -49,21 +49,17 @@ const links: Record<string, FrameImage> = {
   "Hartman":     { frame: "Hartman", url: "https://www.warbyparker.com/eyeglasses/hartman/striped-cypress?w=wide", alt: "Hartman frame" },
 };
 
-export function getFrameImage(frameName: string): FrameImage {
+export function getFrameImage(frameName: string): FrameImage | undefined {
   const normalized = frameName.trim().toLowerCase();
   for (const key in links) {
     if (key.toLowerCase() === normalized) {
       return links[key];
     }
   }
-  // If frame not found, return a default FrameImage.
-  return {
-    frame: frameName,
-    url: "https://www.warbyparker.com/eyeglasses/default-frame?w=medium",
-    alt: `${frameName} frame`,
-  };
+  return undefined;
 }
 
 export default getFrameImage;
+
 
 
