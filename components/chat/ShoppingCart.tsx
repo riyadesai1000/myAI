@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import getFrameImage from "@/lib/frameUtils";
+import getFrameImage from "@/lib/frameUtils"; // Assumes this returns an object: { url: string, alt: string }
 
 interface CartItem {
   frame: string;
@@ -16,8 +16,10 @@ export default function ShoppingCart() {
   const addToCart = () => {
     const trimmed = frameName.trim();
     if (!trimmed) return;
+    // Get the frame image details
     const { url } = getFrameImage(trimmed);
-    if (!cart.some((item) => item.frame.toLowerCase() === trimmed.toLowerCase())) {
+    // Use exact match (case-sensitive) for duplicate checking
+    if (!cart.some((item) => item.frame === trimmed)) {
       setCart((prev) => [...prev, { frame: trimmed, url }]);
     }
     setFrameName("");
@@ -47,7 +49,11 @@ export default function ShoppingCart() {
         <ul className="space-y-2 max-h-48 overflow-y-auto">
           {cart.map((item, index) => (
             <li key={index}>
-              <Link href={item.url} target="_blank" className="text-blue-600 underline hover:text-blue-800">
+              <Link
+                href={item.url}
+                target="_blank"
+                className="text-blue-600 underline hover:text-blue-800"
+              >
                 {item.frame}
               </Link>
             </li>
