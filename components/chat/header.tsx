@@ -7,6 +7,12 @@ import Image from "next/image";
 import { CHAT_HEADER, CLEAR_BUTTON_TEXT } from "@/configuration/ui";
 import { AI_NAME } from "@/configuration/identity";
 
+interface ChatHeaderProps {
+  clearMessages: () => void;
+  toggleCart: () => void;
+  showCart: boolean; // new prop to track if cart is currently shown
+}
+
 export const AILogo = () => (
   <div className="w-12 h-12 relative">
     <Image src="/ai-logo.png" alt={AI_NAME} width={48} height={48} />
@@ -14,22 +20,17 @@ export const AILogo = () => (
   </div>
 );
 
-interface ChatHeaderProps {
-  clearMessages: () => void;
-  toggleCart: () => void; // New prop for toggling the shopping cart
-}
-
-export default function ChatHeader({ clearMessages, toggleCart }: ChatHeaderProps) {
+export default function ChatHeader({
+  clearMessages,
+  toggleCart,
+  showCart,
+}: ChatHeaderProps) {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Add/remove the "dark" class on <html> when darkMode changes
   useEffect(() => {
     const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    if (darkMode) root.classList.add("dark");
+    else root.classList.remove("dark");
   }, [darkMode]);
 
   return (
@@ -44,32 +45,17 @@ export default function ChatHeader({ clearMessages, toggleCart }: ChatHeaderProp
           <p>{CHAT_HEADER}</p>
         </div>
 
-        {/* Right section: End Conversation + Dark Mode Toggle + Show Cart */}
+        {/* Right section: End Conversation + Dark Mode + Show/Hide Cart */}
         <div className="flex-0 w-[240px] flex justify-end items-center gap-2">
-          <Button
-            onClick={clearMessages}
-            className="gap-2 shadow-sm"
-            variant="outline"
-            size="sm"
-          >
+          <Button onClick={clearMessages} className="gap-2 shadow-sm" variant="outline" size="sm">
             <EraserIcon className="w-4 h-4" />
             <span>{CLEAR_BUTTON_TEXT}</span>
           </Button>
-          <Button
-            onClick={() => setDarkMode(!darkMode)}
-            className="gap-2 shadow-sm"
-            variant="outline"
-            size="sm"
-          >
+          <Button onClick={() => setDarkMode(!darkMode)} className="gap-2 shadow-sm" variant="outline" size="sm">
             {darkMode ? "Light Mode" : "Dark Mode"}
           </Button>
-          <Button
-            onClick={toggleCart}
-            className="gap-2 shadow-sm"
-            variant="outline"
-            size="sm"
-          >
-            Show Cart
+          <Button onClick={toggleCart} className="gap-2 shadow-sm" variant="outline" size="sm">
+            {showCart ? "Hide Cart" : "Show Cart"}
           </Button>
         </div>
       </div>
