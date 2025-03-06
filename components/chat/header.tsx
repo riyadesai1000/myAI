@@ -14,12 +14,12 @@ export const AILogo = () => (
   </div>
 );
 
-export default function ChatHeader({
-  clearMessages,
-}: {
+interface ChatHeaderProps {
   clearMessages: () => void;
-}) {
-  // Dark mode state
+  toggleCart: () => void; // New prop for toggling the shopping cart
+}
+
+export default function ChatHeader({ clearMessages, toggleCart }: ChatHeaderProps) {
   const [darkMode, setDarkMode] = useState(false);
 
   // Add/remove the "dark" class on <html> when darkMode changes
@@ -44,9 +44,8 @@ export default function ChatHeader({
           <p>{CHAT_HEADER}</p>
         </div>
 
-        {/* Right section: End Conversation + Dark Mode Toggle */}
-        <div className="flex-0 w-[100px] flex justify-end items-center gap-2">
-          {/* End Conversation button */}
+        {/* Right section: End Conversation + Dark Mode Toggle + Show Cart */}
+        <div className="flex-0 w-[240px] flex justify-end items-center gap-2">
           <Button
             onClick={clearMessages}
             className="gap-2 shadow-sm"
@@ -56,8 +55,6 @@ export default function ChatHeader({
             <EraserIcon className="w-4 h-4" />
             <span>{CLEAR_BUTTON_TEXT}</span>
           </Button>
-
-          {/* Dark Mode toggle, same styling as the End Conversation button */}
           <Button
             onClick={() => setDarkMode(!darkMode)}
             className="gap-2 shadow-sm"
@@ -65,6 +62,14 @@ export default function ChatHeader({
             size="sm"
           >
             {darkMode ? "Light Mode" : "Dark Mode"}
+          </Button>
+          <Button
+            onClick={toggleCart}
+            className="gap-2 shadow-sm"
+            variant="outline"
+            size="sm"
+          >
+            Show Cart
           </Button>
         </div>
       </div>
