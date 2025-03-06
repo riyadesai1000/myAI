@@ -2,25 +2,28 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import getFrameImage from "@/lib/frameUtils"; // Assumes this returns an object: { url: string, alt: string }
+import getFrameImage, { FrameImage } from "@/lib/frameUtils";
 
-interface CartItem {
+export interface CartItem {
   frame: string;
   url: string;
 }
 
-export default function ShoppingCart() {
-  const [cart, setCart] = useState<CartItem[]>([]);
+interface ShoppingCartProps {
+  cart: CartItem[];
+  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+}
+
+export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
   const [frameName, setFrameName] = useState("");
 
   const addToCart = () => {
     const trimmed = frameName.trim();
     if (!trimmed) return;
-    // Get the frame image details
-    const { url } = getFrameImage(trimmed);
-    // Use exact match (case-sensitive) for duplicate checking
-    if (!cart.some((item) => item.frame === trimmed)) {
-      setCart((prev) => [...prev, { frame: trimmed, url }]);
+    const frameData = getFrameImage(trimmed);
+    // Only add if frameData exists and not already in cart (case-insensitive)
+    if (frameData && !cart.some(item => item.frame.toLowerCase() === frameData.frame.toLowerCase())) {
+      setCart(prev => [...prev, { frame: frameData.frame, url: frameData.url }]);
     }
     setFrameName("");
   };
