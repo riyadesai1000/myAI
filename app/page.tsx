@@ -18,7 +18,7 @@ export default function Chat() {
     clearMessages,
   } = useApp();
 
-  // Lift cart state so items persist even when hidden
+  // Lift cart state so items persist even when hidden.
   const [cart, setCart] = useState<CartItem[]>([]);
   const [showCart, setShowCart] = useState(false);
   const toggleCart = () => setShowCart((prev) => !prev);
@@ -27,9 +27,9 @@ export default function Chat() {
     <div className="relative min-h-screen w-full bg-gradient-to-b from-blue-50 via-blue-300 to-blue-50 text-gray-900 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100">
       <ChatHeader clearMessages={clearMessages} toggleCart={toggleCart} showCart={showCart} />
       
-      {/* Main content */}
       <div className="flex flex-col justify-center items-center min-h-screen pt-16 px-5 space-y-8">
         <ChatMessages messages={messages} indicatorState={indicatorState} />
+        {showCart && <ShoppingCart cart={cart} setCart={setCart} />}
       </div>
       
       <ChatInput
@@ -38,20 +38,9 @@ export default function Chat() {
         input={input}
         isLoading={isLoading}
       />
-
-      {/* Shopping Cart overlay in top-right */}
-      {showCart && (
-        <div className="absolute top-20 right-5 z-50">
-          <ShoppingCart cart={cart} setCart={setCart} />
-        </div>
-      )}
     </div>
   );
 }
-
-
-
-
 
 
 
