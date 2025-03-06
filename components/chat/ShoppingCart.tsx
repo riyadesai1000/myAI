@@ -1,51 +1,63 @@
 "use client";
 
-import { useState } from "react";
-import ChatInput from "@/components/chat/input";
-import ChatMessages from "@/components/chat/messages";
-import useApp from "@/hooks/use-app";
-import ChatHeader from "@/components/chat/header";
-import ShoppingCart from "@/components/chat/ShoppingCart";
+import React, { useState } from "react";
+import Link from "next/link";
+import getFrameImage from "@/lib/frameUtils";
 
-export default function Chat() {
-  const {
-    messages,
-    handleInputChange,
-    handleSubmit,
-    input,
-    isLoading,
-    indicatorState,
-    clearMessages,
-  } = useApp();
+interface CartItem {
+  frame: string;
+  url: string;
+}
 
-  // State for controlling cart visibility
-  const [showCart, setShowCart] = useState(false);
-  const toggleCart = () => setShowCart((prev) => !prev);
+export default function ShoppingCart() {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [frameName, setFrameName] = useState("");
+
+  const addToCart = () => {
+    const trimmed = frameName.trim();
+    if (!trimmed) return;
+    const { url } = getFrameImage(trimmed);
+    if (!cart.some((item) => item.frame.toLowerCase() === trimmed.toLowerCase())) {
+      setCart((prev) => [...prev, { frame: trimmed, url }]);
+    }
+    setFrameName("");
+  };
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-blue-50 via-blue-300 to-blue-50 text-gray-900 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100">
-      {/* Header with Show Cart button */}
-      <ChatHeader clearMessages={clearMessages} toggleCart={toggleCart} showCart={showCart} />
-
-      {/* Shopping Cart overlay: positioned at top-right, slightly below header */}
-      {showCart && (
-        <div className="absolute top-20 right-5 z-50">
-          <ShoppingCart />
-        </div>
-      )}
-
-      <div className="flex flex-col justify-center items-center min-h-screen pt-16 px-5 space-y-8">
-        <ChatMessages messages={messages} indicatorState={indicatorState} />
+    <div className="p-4 border rounded shadow-md bg-white dark:bg-gray-800 w-full max-w-md">
+      <h2 className="text-xl font-bold mb-2">Shopping Cart</h2>
+      <div className="flex flex-col sm:flex-row items-stretch gap-2 mb-4">
+        <input
+          type="text"
+          value={frameName}
+          onChange={(e) => setFrameName(e.target.value)}
+          placeholder="Enter frame name..."
+          className="flex-grow p-2 border rounded dark:bg-gray-700 dark:text-white"
+        />
+        <button
+          onClick={addToCart}
+          className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition-colors"
+        >
+          Add
+        </button>
       </div>
-
-      <ChatInput
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-        input={input}
-        isLoading={isLoading}
-      />
+      {cart.length === 0 ? (
+        <p className="text-gray-500">No items in cart.</p>
+      ) : (
+        <ul className="space-y-2 max-h-48 overflow-y-auto">
+          {cart.map((item, index) => (
+            <li key={index}>
+              <Link href={item.url} target="_blank" className="text-blue-600 underline hover:text-blue-800">
+                {item.frame}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
+
+
 
 
