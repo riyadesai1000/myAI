@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import getFrameLink from "@/lib/frameUtils"; // Ensure this helper returns the URL for a frame
+import getFrameImage from "@/lib/frameUtils"; // Assumes this returns { url: string, alt: string }
 
 interface CartItem {
   frame: string;
@@ -15,8 +15,7 @@ export default function ShoppingCart() {
 
   const addToCart = () => {
     if (!frameName.trim()) return;
-    const url = getFrameLink(frameName.trim());
-    // Add frame only if it's not already in the cart
+    const { url } = getFrameImage(frameName.trim());
     setCart((prevCart) => {
       if (prevCart.some((item) => item.frame.toLowerCase() === frameName.trim().toLowerCase())) {
         return prevCart;
@@ -60,3 +59,4 @@ export default function ShoppingCart() {
     </div>
   );
 }
+
