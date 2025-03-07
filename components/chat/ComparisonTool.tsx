@@ -7,6 +7,8 @@ import getFrameImage, { FrameImage } from "@/lib/frameUtils";
 export interface CartItem {
   frame: string;
   url: string;
+  price: string;
+  dimensions: string;
 }
 
 interface ShoppingCartProps {
@@ -23,25 +25,39 @@ export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
     const frameData: FrameImage | undefined = getFrameImage(trimmed);
     // Only add if frameData exists and it's not already in the cart (case-insensitive)
     if (frameData && !cart.some(item => item.frame.toLowerCase() === frameData.frame.toLowerCase())) {
-      setCart(prev => [...prev, { frame: frameData.frame, url: frameData.url }]);
+      setCart(prev => [
+        ...prev, 
+        { frame: frameData.frame, url: frameData.url, price: frameData.price, dimensions: frameData.dimensions }
+      ]);
     }
     setFrameName("");
   };
 
-  // New function: Compare frames
+  // Compare frames: if there are more than 5, show an alert.
   const compareFrames = () => {
+    if (cart.length > 5) {
+      alert("Too many frames to compare!");
+      return;
+    }
     if (cart.length < 2) {
       alert("Please add at least two frames to compare.");
-    } else {
-      const framesList = cart.map(item => item.frame).join(", ");
-      alert(`Comparing frames: ${framesList}`);
+      return;
     }
+    const comparison = cart
+      .map(item => `${item.frame}: ${item.price}, ${item.dimensions}`)
+      .join("\n");
+    alert(`Frame Comparison:\n${comparison}`);
   };
 
+  const clearCart = () => setCart([]);
+
   return (
-    <div className="p-4 border rounded shadow-md bg-white dark:bg-gray-800 w-full max-w-md">
+    <div className="p-4 border rounded shadow-md bg-white dark:bg-gray-800 w-full max-w-md transition-colors duration-300">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-xl font-bold">Shopping Cart</h2>
+        <h2 className="text-xl font-bold">Compare Frames</h2>
+        <button onClick={clearCart} className="text-red-600 text-sm underline">
+          Clear Cart
+        </button>
       </div>
       <div className="flex flex-col sm:flex-row items-stretch gap-2 mb-4">
         <input
@@ -59,25 +75,25 @@ export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
         </button>
       </div>
       {cart.length === 0 ? (
-        <p className="text-gray-500">No items in cart.</p>
+        <p className="text-gray-500">No frames added.</p>
       ) : (
         <>
           <ul className="space-y-2 max-h-48 overflow-y-auto mb-4">
             {cart.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="flex justify-between items-center">
                 <Link
                   href={item.url}
                   target="_blank"
                   className="text-blue-600 underline hover:text-blue-800"
                 >
-                  {item.frame}
+                  {item.frame} - {item.price} - {item.dimensions}
                 </Link>
               </li>
             ))}
           </ul>
           <button
             onClick={compareFrames}
-            className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-colors w-full"
+            className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-colors w-full mb-2"
           >
             Compare Frames
           </button>
