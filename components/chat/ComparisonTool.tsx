@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import getFrameImage, { FrameImage } from "@/lib/frameUtils";
 
 export interface CartItem {
@@ -11,12 +10,12 @@ export interface CartItem {
   dimensions: string;
 }
 
-interface ShoppingCartProps {
+interface ComparisonToolProps {
   cart: CartItem[];
   setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
-export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
+export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
   const [frameName, setFrameName] = useState("");
 
   const addToCart = () => {
@@ -33,7 +32,6 @@ export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
     setFrameName("");
   };
 
-  // Compare frames: if there are more than 5, show an alert.
   const compareFrames = () => {
     if (cart.length > 5) {
       alert("Too many frames to compare!");
@@ -44,7 +42,7 @@ export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
       return;
     }
     const comparison = cart
-      .map(item => `${item.frame}: ${item.price}, ${item.dimensions}`)
+      .map(item => `${item.frame}: Price ${item.price}, Dimensions ${item.dimensions}`)
       .join("\n");
     alert(`Frame Comparison:\n${comparison}`);
   };
@@ -80,14 +78,9 @@ export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
         <>
           <ul className="space-y-2 max-h-48 overflow-y-auto mb-4">
             {cart.map((item, index) => (
-              <li key={index} className="flex justify-between items-center">
-                <Link
-                  href={item.url}
-                  target="_blank"
-                  className="text-blue-600 underline hover:text-blue-800"
-                >
-                  {item.frame} - {item.price} - {item.dimensions}
-                </Link>
+              <li key={index}>
+                {/* Only display the frame name */}
+                <span className="text-blue-600 font-medium">{item.frame}</span>
               </li>
             ))}
           </ul>
@@ -102,6 +95,7 @@ export default function ShoppingCart({ cart, setCart }: ShoppingCartProps) {
     </div>
   );
 }
+
 
 
 
