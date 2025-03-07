@@ -5,7 +5,7 @@ import ChatInput from "@/components/chat/input";
 import ChatMessages from "@/components/chat/messages";
 import useApp from "@/hooks/use-app";
 import ChatHeader from "@/components/chat/header";
-import ShoppingCart, { CartItem } from "@/components/chat/ShoppingCart";
+import ShoppingCart, { CartItem } from "@/components/chat/ComparisonTool";
 
 export default function Chat() {
   const {
