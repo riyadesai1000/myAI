@@ -21,6 +21,13 @@ const links: Record<string, FrameImage> = {
     price: "$95",
     dimensions: "133mm x 138mm"
   },
+  "Wilkie": {
+    frame: "Wilkie",
+    url: "https://www.warbyparker.com/eyeglasses/wilkie/greystone?w=medium",
+    alt: "Wilkie frame",
+    price: "$95",
+    dimensions: "134mm x 148mm"
+  },
   "Durand": {
     frame: "Durand",
     url: "https://www.warbyparker.com/eyeglasses/durand/whiskey-tortoise?w=medium",
