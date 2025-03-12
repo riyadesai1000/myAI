@@ -45,7 +45,7 @@ export default function ChatHeader({ clearMessages, toggleCart, showCart }: Chat
             {darkMode ? "Light Mode" : "Dark Mode"}
           </Button>
           <Button onClick={toggleCart} variant="outline" size="sm">
-            {showCart ? "Hide Items" : "Show Items"}
+            {showCart ? "Compare Frames" : "Hide Frames"}
           </Button>
         </div>
       </div>
