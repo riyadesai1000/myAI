@@ -1,7 +1,7 @@
 export interface FrameImage {
   frame: string;
   url: string;
-  cdnUrl: string; // optional
+  cdnUrl?: string; // optional
   alt: string;
   price: string;
   dimensions: string; // e.g. "Medium x Wide" or actual measurements
