@@ -6,6 +6,7 @@ import ChatMessages from "@/components/chat/messages";
 import useApp from "@/hooks/use-app";
 import ChatHeader from "@/components/chat/header";
 import ShoppingCart, { CartItem } from "@/components/chat/ComparisonTool";
+import FrameImagesButton from "@/components/FrameImagesButton";
 
 export default function Chat() {
   const {
@@ -36,6 +37,12 @@ export default function Chat() {
 
       <div className="flex flex-col justify-center items-center min-h-screen pt-16 px-5 space-y-8">
         <ChatMessages messages={messages} indicatorState={indicatorState} />
+        
+        {/* FrameImagesButton integrated below chat messages */}
+        <FrameImagesButton
+          frameNames={["Gillian", "Daisy", "Durand", "Bodie", "Crane"]}
+          className="mt-4"
+        />
       </div>
 
       <ChatInput
@@ -46,6 +53,8 @@ export default function Chat() {
       />
     </div>
   );
+}
+
 }
 
 
