@@ -39,7 +39,7 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
         {
           frame: frameData.frame,
           url: frameData.url,
-          cdnUrl: frameData.cdnUrl, // use the CDN URL if provided
+          cdnUrl: frameData.cdnUrl,
           price: frameData.price,
           dimensions: frameData.dimensions,
           alt: frameData.alt,
@@ -127,13 +127,6 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
                   >
                     {item.frame}
                   </Link>
-                  <Image
-                    src={item.cdnUrl || item.url}
-                    alt={item.alt}
-                    width={100}
-                    height={75}
-                    className="rounded mt-2"
-                  />
                   <span className="text-sm mt-1">
                     Price: {item.price} | Dimensions: {item.dimensions}
                   </span>
@@ -168,6 +161,7 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
     </div>
   );
 }
+
 
 
 
