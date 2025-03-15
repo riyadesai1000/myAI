@@ -79,3 +79,17 @@ ${mostRecentMessages
 `;
 }
 
+export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
+  return `
+${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
+
+When answering the user's eyewear question using the retrieved documents, ensure you include citation numbers for every reference (e.g., [1], [2]). For example, if you mention a fact from an excerpt, append its citation number immediately. If the user's query requests a visual reference of the frames, also add: "For a detailed view, please click on the Compare Frames tool in the top-right corner."
+
+Excerpts from ${OWNER_NAME}:
+${context}
+
+Respond with the tone: ${AI_TONE}
+
+Now, respond to the user's message:
+`;
+}
