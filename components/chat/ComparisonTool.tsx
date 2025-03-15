@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import getFrameImage, { FrameImage } from "@/lib/frameUtils";
 
 export interface CartItem {
@@ -9,6 +10,7 @@ export interface CartItem {
   url: string;
   price: string;
   dimensions: string;
+  alt: string;
 }
 
 interface ComparisonToolProps {
@@ -19,11 +21,11 @@ interface ComparisonToolProps {
 export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
   const [frameName, setFrameName] = useState("");
   const [showComparison, setShowComparison] = useState(false);
+  const [showImages, setShowImages] = useState(false);
 
   const addToCart = () => {
     const trimmed = frameName.trim();
     if (!trimmed) return;
-    // Check if cart already has 5 items
     if (cart.length >= 5) {
       alert("Cannot input more than 5 frames!");
       setFrameName("");
@@ -32,8 +34,14 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
     const frameData: FrameImage | undefined = getFrameImage(trimmed);
     if (frameData && !cart.some(item => item.frame.toLowerCase() === frameData.frame.toLowerCase())) {
       setCart(prev => [
-        ...prev,
-        { frame: frameData.frame, url: frameData.url, price: frameData.price, dimensions: frameData.dimensions }
+        ...prev, 
+        { 
+          frame: frameData.frame, 
+          url: frameData.url, 
+          price: frameData.price, 
+          dimensions: frameData.dimensions,
+          alt: frameData.alt
+        }
       ]);
     }
     setFrameName("");
@@ -50,6 +58,7 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
   const clearCart = () => {
     setCart([]);
     setShowComparison(false);
+    setShowImages(false);
   };
 
   return (
@@ -86,12 +95,20 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
               </li>
             ))}
           </ul>
-          <button
-            onClick={compareFrames}
-            className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-colors w-full mb-2"
-          >
-            Compare Frames
-          </button>
+          <div className="flex space-x-2 mb-2">
+            <button
+              onClick={compareFrames}
+              className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-colors flex-grow"
+            >
+              Compare Frames
+            </button>
+            <button
+              onClick={() => setShowImages(!showImages)}
+              className="bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700 transition-colors flex-grow"
+            >
+              {showImages ? "Hide Frame Images" : "Show Frame Images"}
+            </button>
+          </div>
         </>
       )}
       {showComparison && (
@@ -116,20 +133,4 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
             </ul>
             <button
               onClick={() => setShowComparison(false)}
-              className="mt-4 bg-gray-600 text-white px-4 py-2 rounded shadow hover:bg-gray-700 transition-colors w-full"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-
-
-
-
-
-
+              className="mt-4 bg-gray-600 text-white px-4 py-2 rounded shadow hover:bg-gray-700 t
