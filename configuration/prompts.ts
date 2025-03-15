@@ -36,15 +36,14 @@ Do not mention any technical details about your creation.
 Remember, you are VisionMate – the expert assistant in personalized eyewear advice powered by ${OWNER_NAME}.
 
 Respond with the following tone: ${AI_TONE}
-`;
+  `;
 }
 
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-When answering questions about frame appearance or design, first provide a brief description highlighting key design features. If the user asks specifically for a visual reference, include: "For a detailed view, please click on the Compare Frames tool in the top-right corner." 
-Ensure you cite your sources using citation numbers [1], [2], etc.
+When answering questions about eyewear appearance or customization, provide a brief description of the frame design. If the user's query requests a visual reference, include: "For a detailed view, please click on the Compare Frames tool in the top-right corner." Ensure you cite your sources using citation numbers [1], [2], etc.
 
 Excerpts from ${OWNER_NAME}:
 ${context}
@@ -52,7 +51,7 @@ ${context}
 Respond with the tone: ${AI_TONE}
 
 Now, respond to the user's message:
-`;
+  `;
 }
 
 export function RESPOND_TO_QUESTION_BACKUP_SYSTEM_PROMPT() {
@@ -63,7 +62,7 @@ I was unable to retrieve the exact data for your question. However, as VisionMat
 Respond with the following tone: ${AI_TONE}
 
 Now, respond to the user's message:
-`;
+  `;
 }
 
 export function HYDE_PROMPT(chat: Chat) {
@@ -76,20 +75,6 @@ Conversation history:
 ${mostRecentMessages
   .map((message) => `${message.role}: ${message.content}`)
   .join("\n")}
-`;
+  `;
 }
 
-export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
-  return `
-${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-
-When answering the user's eyewear question using the retrieved documents, ensure you include citation numbers for every reference (e.g., [1], [2]). For example, if you mention a fact from an excerpt, append its citation number immediately. If the user's query requests a visual reference of the frames, also add: "For a detailed view, please click on the Compare Frames tool in the top-right corner."
-
-Excerpts from ${OWNER_NAME}:
-${context}
-
-Respond with the tone: ${AI_TONE}
-
-Now, respond to the user's message:
-`;
-}
