@@ -51,7 +51,7 @@ const links: Record<string, FrameImage> = {
   "Crane": {
     frame: "Crane",
     url: "https://www.warbyparker.com/eyeglasses/crane/black-matte-eclipse?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/1ecd711a770a9e679b893bff397c32d1563f92cc", 
     alt: "Crane frame",
     price: "$95",
     dimensions: "130mm x 140mm"
@@ -59,7 +59,7 @@ const links: Record<string, FrameImage> = {
   "Percey": {
     frame: "Percey",
     url: "https://www.warbyparker.com/eyeglasses/percey/chestnut-crystal?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/25ded50d3632204e905fb201c4158bfa88849087", 
     alt: "Percey frame",
     price: "$95",
     dimensions: "132mm x 138mm"
@@ -67,7 +67,7 @@ const links: Record<string, FrameImage> = {
   "Esme": {
     frame: "Esme",
     url: "https://www.warbyparker.com/eyeglasses/esme/sesame-tortoise?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/efe414ba72658169f24be4c27efdd9731bfd1860", 
     alt: "Esme frame",
     price: "$95",
     dimensions: "137mm x 142mm"
@@ -75,7 +75,7 @@ const links: Record<string, FrameImage> = {
   "Chamberlain": {
     frame: "Chamberlain",
     url: "https://www.warbyparker.com/eyeglasses/chamberlain/olive-matte?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/96c33048cb20e7a54ea757be1ca3f6e63e0564f5", 
     alt: "Chamberlain frame",
     price: "$95",
     dimensions: "134mm x 140mm"
@@ -83,7 +83,7 @@ const links: Record<string, FrameImage> = {
   "Hayden": {
     frame: "Hayden",
     url: "https://www.warbyparker.com/eyeglasses/hayden/striped-pacific?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/8f6034ae2c30e603a4941f2be8f7c001adaac11d", 
     alt: "Hayden frame",
     price: "$95",
     dimensions: "133mm x 140mm"
@@ -91,7 +91,7 @@ const links: Record<string, FrameImage> = {
   "Baker": {
     frame: "Baker",
     url: "https://www.warbyparker.com/eyeglasses/baker/striped-sassafras?w=medium",
-    cdnUrl: 
+    cdnUrl: "https://i.warbycdn.com/s/c/3d757dbb1c90a02ae7fbcb1fe2aca81d3e2e4a5a", 
     alt: "Baker frame",
     price: "$95",
     dimensions: "134mm x 140mm"
@@ -99,7 +99,7 @@ const links: Record<string, FrameImage> = {
   "Bram": {
     frame: "Bram",
     url: "https://www.warbyparker.com/eyeglasses/bram/layered-ocean-crystal?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/d055f7aed62004759c67d0054de67a38664548a2", 
     alt: "Bram frame",
     price: "$95",
     dimensions: "137mm x 140mm"
@@ -107,7 +107,7 @@ const links: Record<string, FrameImage> = {
   "Brimer": {
     frame: "Brimer",
     url: "https://www.warbyparker.com/eyeglasses/brimmer/black-walnut?w=medium",
-    cdnUrl: 
+    cdnUrl: "https://i.warbycdn.com/s/c/c2e67df7fddbd07c29a3f5e7650e7a9aceb88422", 
     alt: "Brimer frame",
     price: "$95",
     dimensions: "134mm x 138mm"
@@ -115,7 +115,7 @@ const links: Record<string, FrameImage> = {
   "Wiletta": {
     frame: "Wiletta",
     url: "https://www.warbyparker.com/eyeglasses/willetta/pink-robin-tortoise-with-polished-gold?w=extra-wide",
-    cdnUrl: "", 
+    cdnUrl: "https://i.warbycdn.com/s/c/87aa2d740172cb35a4c1f42eca73ac990e9f1652", 
     alt: "Wiletta frame",
     price: "$145",
     dimensions: "145mm x 140mm"
