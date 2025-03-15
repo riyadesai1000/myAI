@@ -34,14 +34,14 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
     const frameData: FrameImage | undefined = getFrameImage(trimmed);
     if (frameData && !cart.some(item => item.frame.toLowerCase() === frameData.frame.toLowerCase())) {
       setCart(prev => [
-        ...prev, 
-        { 
-          frame: frameData.frame, 
-          url: frameData.url, 
-          price: frameData.price, 
+        ...prev,
+        {
+          frame: frameData.frame,
+          url: frameData.url,
+          price: frameData.price,
           dimensions: frameData.dimensions,
-          alt: frameData.alt
-        }
+          alt: frameData.alt,
+        },
       ]);
     }
     setFrameName("");
@@ -73,64 +73,5 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
         <input
           type="text"
           value={frameName}
-          onChange={(e) => setFrameName(e.target.value)}
-          placeholder="Enter frame name..."
-          className="flex-grow p-2 border rounded dark:bg-gray-700 dark:text-white"
-        />
-        <button
-          onClick={addToCart}
-          className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition-colors"
-        >
-          Add
-        </button>
-      </div>
-      {cart.length === 0 ? (
-        <p className="text-gray-500">No frames added.</p>
-      ) : (
-        <>
-          <ul className="space-y-2 max-h-48 overflow-y-auto mb-4">
-            {cart.map((item, index) => (
-              <li key={index}>
-                <span className="text-blue-600 font-medium">{item.frame}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="flex space-x-2 mb-2">
-            <button
-              onClick={compareFrames}
-              className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-colors flex-grow"
-            >
-              Compare Frames
-            </button>
-            <button
-              onClick={() => setShowImages(!showImages)}
-              className="bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700 transition-colors flex-grow"
-            >
-              {showImages ? "Hide Frame Images" : "Show Frame Images"}
-            </button>
-          </div>
-        </>
-      )}
-      {showComparison && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-gray-900 p-6 rounded shadow-lg w-80">
-            <h3 className="text-lg font-bold mb-4">Frame Comparison</h3>
-            <ul className="space-y-2 max-h-48 overflow-y-auto">
-              {cart.map((item, index) => (
-                <li key={index} className="flex flex-col">
-                  <Link
-                    href={item.url}
-                    target="_blank"
-                    className="text-blue-600 underline hover:text-blue-800"
-                  >
-                    {item.frame}
-                  </Link>
-                  <span className="text-sm">
-                    Price: {item.price} | Dimensions: {item.dimensions}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <button
-              onClick={() => setShowComparison(false)}
-              className="mt-4 bg-gray-600 text-white px-4 py-2 rounded shadow hover:bg-gray-700 t
+         
+
