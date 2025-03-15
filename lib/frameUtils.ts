@@ -35,7 +35,7 @@ const links: Record<string, FrameImage> = {
   "Durand": {
     frame: "Durand",
     url: "https://www.warbyparker.com/eyeglasses/durand/whiskey-tortoise?w=medium",
-    cdnUrl: "https://i.warbycdn.com/s/c/a887449139879eba6dff54020045d76f403db961" 
+    cdnUrl: "https://i.warbycdn.com/s/c/a887449139879eba6dff54020045d76f403db961", 
     alt: "Durand frame",
     price: "$95",
     dimensions: "133mm x 139mm"
