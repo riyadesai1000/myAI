@@ -7,6 +7,7 @@ import useApp from "@/hooks/use-app";
 import ChatHeader from "@/components/chat/header";
 import ShoppingCart, { CartItem } from "@/components/chat/ComparisonTool";
 import FrameImagesButton from "@/components/chat/FrameImagesButton";
+import "react-tippy/dist/tippy.css";
 
 export default function Chat() {
   const {
