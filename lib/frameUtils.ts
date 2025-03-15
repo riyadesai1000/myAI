@@ -10,6 +10,7 @@ const links: Record<string, FrameImage> = {
   "Gillian": {
     frame: "Gillian",
     url: "https://www.warbyparker.com/eyeglasses/gillian/teal-tortoise?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/2470cc7932b123528c53bf99d8cd5504b0907b3a",
     alt: "Gillian frame",
     price: "$95",
     dimensions: "135mm x 142mm"
@@ -17,6 +18,7 @@ const links: Record<string, FrameImage> = {
   "Daisy": {
     frame: "Daisy",
     url: "https://www.warbyparker.com/eyeglasses/daisy/tea-rose-fade?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/248b305a0b6dc20907b1aa6aef0ec8d152c52928", 
     alt: "Daisy frame",
     price: "$95",
     dimensions: "133mm x 138mm"
