@@ -44,6 +44,7 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
 Use the following excerpts from ${OWNER_NAME} to answer the user's eyewear question. Focus on details about their exclusive customization process, unique frame designs, and advanced features that set their eyewear apart.
+If the user's query requests to view or see a frame image, respond with: "To view the frame image, please search for the exact frame on the Compare Frames tool in the top-right corner."
 Ensure you cite your sources using citation numbers [1], [2], etc.
 
 Excerpts from ${OWNER_NAME}:
