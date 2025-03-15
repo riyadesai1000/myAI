@@ -8,6 +8,7 @@ import getFrameImage, { FrameImage } from "@/lib/frameUtils";
 export interface CartItem {
   frame: string;
   url: string;
+  cdnUrl?: string; // optional property for direct image URL
   price: string;
   dimensions: string;
   alt: string;
@@ -38,6 +39,7 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
         {
           frame: frameData.frame,
           url: frameData.url,
+          cdnUrl: frameData.cdnUrl, // use the CDN URL if provided
           price: frameData.price,
           dimensions: frameData.dimensions,
           alt: frameData.alt,
@@ -117,7 +119,7 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
             <h3 className="text-lg font-bold mb-4">Frame Comparison</h3>
             <ul className="space-y-2 max-h-48 overflow-y-auto">
               {cart.map((item, index) => (
-                <li key={index} className="flex flex-col">
+                <li key={index} className="flex flex-col items-center">
                   <Link
                     href={item.url}
                     target="_blank"
@@ -125,7 +127,14 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
                   >
                     {item.frame}
                   </Link>
-                  <span className="text-sm">
+                  <Image
+                    src={item.cdnUrl || item.url}
+                    alt={item.alt}
+                    width={100}
+                    height={75}
+                    className="rounded mt-2"
+                  />
+                  <span className="text-sm mt-1">
                     Price: {item.price} | Dimensions: {item.dimensions}
                   </span>
                 </li>
@@ -145,7 +154,7 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
           {cart.map((item, idx) => (
             <div key={idx} className="border rounded shadow-md p-2">
               <Image
-                src={item.url}
+                src={item.cdnUrl || item.url}
                 alt={item.alt}
                 width={200}
                 height={150}
@@ -159,5 +168,6 @@ export default function ComparisonTool({ cart, setCart }: ComparisonToolProps) {
     </div>
   );
 }
+
 
 
