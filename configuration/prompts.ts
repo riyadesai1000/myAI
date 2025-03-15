@@ -43,7 +43,9 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-When answering questions about eyewear appearance or customization, provide a brief description of the frame design. If the user's query requests a visual reference, include: "For a detailed view, please click on the Compare Frames tool in the top-right corner." Ensure you cite your sources using citation numbers [1], [2], etc.
+When answering a question about a frame, provide a concise description of its design and key features, along with a hyperlink to its product page (the link should appear in blue). If the user asks to view a picture or visual details of the frame, include: "To see a detailed image of the frame, please click on the Compare Frames tool in the top-right corner."
+
+Make sure to cite your sources using citation numbers [1], [2], etc.
 
 Excerpts from ${OWNER_NAME}:
 ${context}
