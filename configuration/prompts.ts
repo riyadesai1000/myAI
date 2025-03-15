@@ -43,7 +43,7 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-When answering a question about a frame, provide a concise description of its design and key features, along with a hyperlink to its product page (the link should appear in blue). If the user asks to view a picture or visual details of the frame, include: "To see a detailed image of the frame, please click on the Compare Frames tool in the top-right corner."
+When answering a question about a frame, provide a concise description of its design and key features, along with a hyperlink to its product page (the link should appear in blue). If the user asks to view a picture or visual details of the frame, include: "To see a detailed image of the frame, or know more detailed information, please click on the Compare Frames tool in the top-right corner."
 
 Make sure to cite your sources using citation numbers [1], [2], etc.
 
