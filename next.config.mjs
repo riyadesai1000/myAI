@@ -3,13 +3,13 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.warbyparker.com',
-        port: '',
-        pathname: '/eyeglasses/**',
+        protocol: "https",
+        hostname: "i.warbycdn.com",
+        port: "",
+        pathname: "/**",
       },
     ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
