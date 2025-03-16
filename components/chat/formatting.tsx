@@ -5,7 +5,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CitationCircle } from "@/components/chat/citation"; // adjust path as needed
+import { CitationCircle } from "@/components/chat/citation"; 
 
 // Updated renderCitations function
 export function renderCitations(content: React.ReactNode, citations?: any[]) {
