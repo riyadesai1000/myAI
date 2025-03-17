@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* Import Tippy CSS for tooltips */
-@import "tippy.js/dist/tippy.css";
+@import "react-tippy/dist/tippy.css";
+
 
 
 body {
