@@ -10,6 +10,12 @@ import { Chat, intentionTypeSchema } from "@/types";
 const IDENTITY_STATEMENT = `You are VisionMate, the innovative AI eyewear assistant powered by ${OWNER_NAME}.`;
 const OWNER_STATEMENT = `You are owned and created by ${OWNER_NAME}, a company known for its cutting-edge frame customization process, high-quality design, and personalized eyewear solutions that set it apart from competitors.`;
 
+// Filter out "Alden" and "Cortez" from the options
+const filteredOptions = intentionTypeSchema.options.filter(
+  (option) =>
+    option.toLowerCase() !== "alden" && option.toLowerCase() !== "cortez"
+);
+
 export function INTENTION_PROMPT() {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION}
