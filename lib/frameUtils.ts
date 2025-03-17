@@ -123,6 +123,7 @@ const links: Record<string, FrameImage> = {
   "Baird": {
     frame: "Baird",
     url: "https://www.warbyparker.com/eyeglasses/baird/oak-barrel-with-antique-silver?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/923e3df42ca16927520a9e1d94a893ea22527d55", 
     alt: "Baird frame",
     price: "$145",
     dimensions: "142mm x 139mm"
@@ -130,6 +131,7 @@ const links: Record<string, FrameImage> = {
   "Keiko": {
     frame: "Keiko",
     url: "https://www.warbyparker.com/eyeglasses/keiko/brushed-ink-with-polished-gold?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/9cdc0ac5148948fcb136f01836736d9b7d8b9818", 
     alt: "Keiko frame",
     price: "$145",
     dimensions: "131mm x 140mm"
@@ -137,6 +139,7 @@ const links: Record<string, FrameImage> = {
   "Felix": {
     frame: "Felix",
     url: "https://www.warbyparker.com/eyeglasses/felix/jet-black?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/b94adad195054a4b0cb8c0194999dcc182adbda5", 
     alt: "Felix frame",
     price: "$95",
     dimensions: "135mm x 133mm"
@@ -144,6 +147,7 @@ const links: Record<string, FrameImage> = {
   "Armando": {
     frame: "Armando",
     url: "https://www.warbyparker.com/eyeglasses/armando/polished-silver?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/4cd4f87b3612be4b0a85e4326671aff2642e821b", 
     alt: "Armando frame",
     price: "$145",
     dimensions: "134mm x 140mm"
@@ -151,6 +155,7 @@ const links: Record<string, FrameImage> = {
   "Simon": {
     frame: "Simon",
     url: "https://www.warbyparker.com/eyeglasses/simon/antique-silver?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/990bd5447e8de031e45b7e1bf677ffbfa7b5a11f", 
     alt: "Simon frame",
     price: "$145",
     dimensions: "128mm x 136mm"
@@ -158,6 +163,7 @@ const links: Record<string, FrameImage> = {
   "Garrison": {
     frame: "Garrison",
     url: "https://www.warbyparker.com/eyeglasses/garrison/polished-gold-with-ivy?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/30bc42d5ab039c7e6d3f0b060a1f40f579a27d39",
     alt: "Garrison frame",
     price: "$195",
     dimensions: "135mm x 137mm"
@@ -165,6 +171,7 @@ const links: Record<string, FrameImage> = {
   "Whalen": {
     frame: "Whalen",
     url: "https://www.warbyparker.com/eyeglasses/whalen/pebble-shore-tortoise-with-riesling?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/a1ec7348e8e475d549afd459203e88c3b6df5ea2", 
     alt: "Whalen frame",
     price: "$145",
     dimensions: "134mm x 137mm"
@@ -172,6 +179,7 @@ const links: Record<string, FrameImage> = {
   "Elias": {
     frame: "Elias",
     url: "https://www.warbyparker.com/eyeglasses/elias/striped-cypress?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/2470cc7932b123528c53bf99d8cd5504b0907b3a", 
     alt: "Elias frame",
     price: "$95",
     dimensions: "136mm x 138mm"
@@ -179,6 +187,7 @@ const links: Record<string, FrameImage> = {
   "Mattie": {
     frame: "Mattie",
     url: "https://www.warbyparker.com/eyeglasses/mattie/mountain-blue?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/3c7dcdaae4f8c407ff1d01122bcf9fc6ae5cbf0c", 
     alt: "Mattie frame",
     price: "$95",
     dimensions: "137mm x 138mm"
@@ -186,6 +195,7 @@ const links: Record<string, FrameImage> = {
   "Tobias": {
     frame: "Tobias",
     url: "https://www.warbyparker.com/eyeglasses/tobias/seaweed-crystal?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/4b53fbfc0ab8f59b47e167f3e606164ad223f452", 
     alt: "Tobias frame",
     price: "$95",
     dimensions: "136mm x 138mm"
@@ -193,6 +203,7 @@ const links: Record<string, FrameImage> = {
   "Santiago": {
     frame: "Santiago",
     url: "https://www.warbyparker.com/eyeglasses/santiago/crystal-with-polished-gold?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/7dcfcde3cb18408f67ce2be8e8be1cf98f4b2650", 
     alt: "Santiago frame",
     price: "$145",
     dimensions: "137mm x 138mm"
@@ -200,6 +211,7 @@ const links: Record<string, FrameImage> = {
   "Waite": {
     frame: "Waite",
     url: "https://www.warbyparker.com/eyeglasses/waite/antique-silver?w=narrow",
+    cdnUrl: "https://i.warbycdn.com/s/c/adad5e90128b63f4773a3eaaac47e0f4c5b30367", 
     alt: "Waite frame",
     price: "$195",
     dimensions: "130mm x 138mm"
@@ -207,6 +219,7 @@ const links: Record<string, FrameImage> = {
   "Carlos": {
     frame: "Carlos",
     url: "https://www.warbyparker.com/eyeglasses/carlos/crystal-with-oak-barrel?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/ff813e80c19b4faa2262b45dfd1648731befae9a", 
     alt: "Carlos frame",
     price: "$125",
     dimensions: "137mm x 140mm"
@@ -214,6 +227,7 @@ const links: Record<string, FrameImage> = {
   "Olin": {
     frame: "Olin",
     url: "https://www.warbyparker.com/eyeglasses/olin/antique-silver?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/041b12b16e290d8b8ea1b8a0c4908aae7c243350", 
     alt: "Olin frame",
     price: "$195",
     dimensions: "138mm x 140mm"
@@ -221,6 +235,7 @@ const links: Record<string, FrameImage> = {
   "York": {
     frame: "York",
     url: "https://www.warbyparker.com/eyeglasses/york/brushed-ink-with-polished-gold?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/b299941a9f4956c5ddcbff5f66f4d50f7eef6847", 
     alt: "York frame",
     price: "$145",
     dimensions: "132mm x 136mm"
@@ -228,6 +243,7 @@ const links: Record<string, FrameImage> = {
   "Uma": {
     frame: "Uma",
     url: "https://www.warbyparker.com/eyeglasses/uma/antique-silver?w=narrow",
+    cdnUrl: "https://i.warbycdn.com/s/c/7dc2c1ff5eb5ac388f8f830081043962de406d9b", 
     alt: "Uma frame",
     price: "$195",
     dimensions: "128mm x 130mm"
@@ -235,6 +251,7 @@ const links: Record<string, FrameImage> = {
   "Kemi": {
     frame: "Kemi",
     url: "https://www.warbyparker.com/eyeglasses/kemi/sunbeam-tortoise-fade?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/9ed7ec5fd4db1f5b613b17f721efdd1dfa75dac1", 
     alt: "Kemi frame",
     price: "$95",
     dimensions: "138mm x 140mm"
@@ -242,6 +259,7 @@ const links: Record<string, FrameImage> = {
   "Haskell": {
     frame: "Haskell",
     url: "https://www.warbyparker.com/eyeglasses/haskell/crystal?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/c2ee6e3188fd9ec9e569c2f209cb4fc158621874", 
     alt: "Haskell frame",
     price: "$95",
     dimensions: "133mm x 138mm"
@@ -249,6 +267,7 @@ const links: Record<string, FrameImage> = {
   "Saul": {
     frame: "Saul",
     url: "https://www.warbyparker.com/eyeglasses/saul/brushed-ink?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/15066589f915aff78e5c72af6391168c6328a77a", 
     alt: "Saul frame",
     price: "$195",
     dimensions: "140mm x 141mm"
@@ -256,6 +275,7 @@ const links: Record<string, FrameImage> = {
   "Welty": {
     frame: "Welty",
     url: "https://www.warbyparker.com/eyeglasses/welty/eastern-bluebird-fade?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/abd63ee565cf338892612bf443961a2846afc7f5", 
     alt: "Welty frame",
     price: "$95",
     dimensions: "137mm x 142mm"
@@ -263,6 +283,7 @@ const links: Record<string, FrameImage> = {
   "Wright": {
     frame: "Wright",
     url: "https://www.warbyparker.com/eyeglasses/wright/rosemary-crystal?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/c0d4c74f843a01d60ab36b86b3a414b9e7b3279a", 
     alt: "Wright frame",
     price: "$95",
     dimensions: "136mm x 138mm"
@@ -270,6 +291,7 @@ const links: Record<string, FrameImage> = {
   "Freddy": {
     frame: "Freddy",
     url: "https://www.warbyparker.com/eyeglasses/freddy/ristretto-tortoise?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/cd31747e40767eeeda039fd979515b15427de14c", 
     alt: "Freddy frame",
     price: "$95",
     dimensions: "140mm x 138mm"
@@ -277,6 +299,7 @@ const links: Record<string, FrameImage> = {
   "Hughes": {
     frame: "Hughes",
     url: "https://www.warbyparker.com/eyeglasses/hughes/chestnut-crystal?w=medium",
+    cdnUrl:
     alt: "Hughes frame",
     price: "$95",
     dimensions: "134mm x 142mm"
@@ -284,6 +307,7 @@ const links: Record<string, FrameImage> = {
   "Blakeley": {
     frame: "Blakeley",
     url: "https://www.warbyparker.com/eyeglasses/blakeley/violet-magnolia?w=medium",
+    cdnUrl: 
     alt: "Blakeley frame",
     price: "$95",
     dimensions: "132mm x 139mm"
@@ -291,6 +315,7 @@ const links: Record<string, FrameImage> = {
   "Maren": {
     frame: "Maren",
     url: "https://www.warbyparker.com/eyeglasses/maren/violet-magnolia-with-polished-gold?w=medium",
+    cdnUrl: 
     alt: "Maren frame",
     price: "$145",
     dimensions: "133mm x 138mm"
@@ -298,6 +323,7 @@ const links: Record<string, FrameImage> = {
   "Ames": {
     frame: "Ames",
     url: "https://www.warbyparker.com/eyeglasses/ames/whiskey-tortoise-with-riesling?w=wide",
+    cdnUrl:
     alt: "Ames frame",
     price: "$145",
     dimensions: "138mm x 145mm"
@@ -305,6 +331,7 @@ const links: Record<string, FrameImage> = {
   "Eloide": {
     frame: "Eloide",
     url: "https://www.warbyparker.com/eyeglasses/elodie/pink-robin-tortoise?w=medium",
+    cdnUrl:
     alt: "Eloide frame",
     price: "$95",
     dimensions: "137mm x 138mm"
@@ -312,6 +339,7 @@ const links: Record<string, FrameImage> = {
   "Minden": {
     frame: "Minden",
     url: "https://www.warbyparker.com/eyeglasses/minden/riesling-with-eggshell?w=medium",
+    cdnUrl:
     alt: "Minden frame",
     price: "$145",
     dimensions: "133mm x 137mm"
@@ -319,6 +347,7 @@ const links: Record<string, FrameImage> = {
   "Hartman": {
     frame: "Hartman",
     url: "https://www.warbyparker.com/eyeglasses/hartman/striped-cypress?w=wide",
+    cdnUrl:
     alt: "Hartman frame",
     price: "$95",
     dimensions: "139mm x 140mm"
