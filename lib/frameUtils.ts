@@ -104,11 +104,11 @@ const links: Record<string, FrameImage> = {
     price: "$95",
     dimensions: "137mm x 140mm"
   },
-  "Brimer": {
-    frame: "Brimer",
+  "Brimmer": {
+    frame: "Brimmer",
     url: "https://www.warbyparker.com/eyeglasses/brimmer/black-walnut?w=medium",
     cdnUrl: "https://i.warbycdn.com/s/c/c2e67df7fddbd07c29a3f5e7650e7a9aceb88422", 
-    alt: "Brimer frame",
+    alt: "Brimmer frame",
     price: "$95",
     dimensions: "134mm x 138mm"
   },
@@ -349,6 +349,22 @@ const links: Record<string, FrameImage> = {
     url: "https://www.warbyparker.com/eyeglasses/hartman/striped-cypress?w=wide",
     cdnUrl: "https://i.warbycdn.com/s/c/9f82d87704c69b83abf4b3636ed0a5eb7d9c9a3d", 
     alt: "Hartman frame",
+    price: "$95",
+    dimensions: "139mm x 140mm"
+  },
+   "Alden": {
+    frame: "Alden",
+    url: "https://www.warbyparker.com/eyeglasses/minden/riesling-with-eggshell?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/6ef47e16dab2b616cb814f88ed347e4c285c0204", 
+    alt: "Alden frame",
+    price: "$145",
+    dimensions: "133mm x 137mm"
+  },
+  "Cortez": {
+    frame: "Cortez",
+    url: "https://www.warbyparker.com/eyeglasses/hartman/striped-cypress?w=wide",
+    cdnUrl: "https://i.warbycdn.com/s/c/9f82d87704c69b83abf4b3636ed0a5eb7d9c9a3d", 
+    alt: "Cortez frame",
     price: "$95",
     dimensions: "139mm x 140mm"
   },
