@@ -368,6 +368,14 @@ const links: Record<string, FrameImage> = {
     price: "$145",
     dimensions: "139mm x 140mm"
   },
+   "Winston": {
+    frame: "Winston",
+    url: "https://www.warbyparker.com/eyeglasses/winston/jet-black?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/3bbcdc990e4a7bb6f5dac59dc6d80978d1c6115a", 
+    alt: "Winston frame",
+    price: "$95",
+    dimensions: "136mm x 140mm"
+  },
 };
 
 export function getFrameImage(frameName: string): FrameImage | undefined {
