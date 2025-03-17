@@ -43,19 +43,9 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-When answering a question about a frame, provide a concise description of its design and key features, along with a hyperlink to its product page (rendered in blue). If the user asks to see an image, instruct them: "For a detailed image, please click on the Compare Frames tool in the top-right corner."
+When answering a question about a frame, provide a concise description of its design and key features, along with a hyperlink (in blue) to its product page. If the user requests to see an image, instruct them: "For a detailed image, please click on the Compare Frames tool in the top-right corner."
 
 Make sure to cite your sources using citation numbers [1], [2], etc.
-
-Excerpts from ${OWNER_NAME}:
-${context}
-
-Respond with the tone: ${AI_TONE}
-
-Now, respond to the user's message:
-  `;
-}
-
 
 Excerpts from ${OWNER_NAME}:
 ${context}
@@ -79,14 +69,11 @@ Now, respond to the user's message:
 
 export function HYDE_PROMPT(chat: Chat) {
   const mostRecentMessages = chat.messages.slice(-3);
-
   return `
 You are VisionMate, the personalized eyewear assistant powered by ${OWNER_NAME}. Based on the conversation history, generate hypothetical excerpts that relate to the final user message and emphasize our expertise in frame customization, unique design features, and advanced technology that differentiates our eyewear from competitors.
 
 Conversation history:
-${mostRecentMessages
-  .map((message) => `${message.role}: ${message.content}`)
-  .join("\n")}
+${mostRecentMessages.map((message) => `${message.role}: ${message.content}`).join("\n")}
   `;
 }
 
