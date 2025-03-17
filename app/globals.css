@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* Import Tippy CSS for tooltips */
-@import "react-tippy/dist/tippy.css";
+@import "tippy.js/dist/tippy.css";
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
