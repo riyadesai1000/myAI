@@ -7,17 +7,19 @@ import "katex/dist/katex.min.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CitationCircle } from "@/components/chat/citation"; // Ensure this path is correct
 
-// Updated renderCitations function that prevents duplicate citations.
+// Updated renderCitations function that prevents duplicate citation tooltips.
 export function renderCitations(content: React.ReactNode, citations?: any[]) {
   if (!citations || citations.length === 0) return content;
-  
+
+  // Create a set to track processed citation indexes
   const processed = new Set<number>();
-  
+
   if (typeof content === "string") {
     return content.split(/(\[\d+\])/g).map((part, index) => {
       const match = part.match(/\[(\d+)\]/);
       if (match) {
         const citationIndex = parseInt(match[1], 10) - 1;
+        // If already processed, render citation number in bold without tooltip
         if (processed.has(citationIndex)) {
           return (
             <span key={index} className="font-bold">
@@ -42,7 +44,6 @@ export function renderCitations(content: React.ReactNode, citations?: any[]) {
 }
 
 export function Formatting({ message }: { message: DisplayMessage }) {
-  // In this example, we use message.content directly.
   const processedContent = message.content;
 
   const components = {
@@ -84,6 +85,5 @@ export function Formatting({ message }: { message: DisplayMessage }) {
     </ReactMarkdown>
   );
 }
-
 
 
