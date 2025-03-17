@@ -43,9 +43,18 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-When answering a question about a frame, provide a concise description of its design and key features, along with a hyperlink to its product page (the link should appear in blue). If the user asks to view a picture or visual details of the frame, include: "To see a detailed image of the frame, or know more detailed information, please click on the Compare Frames tool in the top-right corner."
+When answering a question about a frame, provide a concise description of its design and key features. Include a hyperlink to its product page (as provided by the frameUtils.ts mapping) rendered in blue. For example, if the frame is "Gillian", output something like: [Gillian](https://www.warbyparker.com/eyeglasses/gillian/teal-tortoise?w=medium). If the user asks for a visual reference, add: "For a detailed image of the frame, please click on the Compare Frames tool in the top-right corner."
 
-Make sure to cite your sources using citation numbers [1], [2], etc.
+Ensure you cite your sources using citation numbers [1], [2], etc.
+
+Excerpts from ${OWNER_NAME}:
+${context}
+
+Respond with the tone: ${AI_TONE}
+
+Now, respond to the user's message:
+  `;
+}
 
 Excerpts from ${OWNER_NAME}:
 ${context}
