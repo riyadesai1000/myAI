@@ -6,6 +6,9 @@ import Link from "next/link";
 import { EMPTY_CITATION_MESSAGE } from "@/configuration/ui";
 import { Citation } from "@/types";
 
+// Create a temporary variable for the Tooltip with an any cast.
+const CustomTooltip = Tooltip as any;
+
 export function CitationCircle({
   number,
   citation,
@@ -26,7 +29,7 @@ export function CitationCircle({
   const hasSourceDescription = citation.source_description.trim() !== "";
 
   return (
-    <(Tooltip as any)
+    <CustomTooltip
       title=""
       position="bottom"
       trigger="mouseenter"
@@ -52,9 +55,10 @@ export function CitationCircle({
       <span className="cursor-pointer bg-gray-200 rounded-full px-2 py-1">
         [{number}]
       </span>
-    </(Tooltip as any)>
+    </CustomTooltip>
   );
 }
 
 export default CitationCircle;
+
 
