@@ -299,7 +299,7 @@ const links: Record<string, FrameImage> = {
   "Hughes": {
     frame: "Hughes",
     url: "https://www.warbyparker.com/eyeglasses/hughes/chestnut-crystal?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/2a70cc3b54130d15773aa4265a46d0fdd2bd7a0a", 
     alt: "Hughes frame",
     price: "$95",
     dimensions: "134mm x 142mm"
@@ -307,7 +307,7 @@ const links: Record<string, FrameImage> = {
   "Blakeley": {
     frame: "Blakeley",
     url: "https://www.warbyparker.com/eyeglasses/blakeley/violet-magnolia?w=medium",
-    cdnUrl: 
+    cdnUrl: "https://i.warbycdn.com/s/c/ce12107b32c2821626100e463211e016c1263b3a", 
     alt: "Blakeley frame",
     price: "$95",
     dimensions: "132mm x 139mm"
@@ -315,7 +315,7 @@ const links: Record<string, FrameImage> = {
   "Maren": {
     frame: "Maren",
     url: "https://www.warbyparker.com/eyeglasses/maren/violet-magnolia-with-polished-gold?w=medium",
-    cdnUrl: 
+    cdnUrl: "https://i.warbycdn.com/s/c/5461416be913870b69b97c097381615370bc4809", 
     alt: "Maren frame",
     price: "$145",
     dimensions: "133mm x 138mm"
@@ -323,7 +323,7 @@ const links: Record<string, FrameImage> = {
   "Ames": {
     frame: "Ames",
     url: "https://www.warbyparker.com/eyeglasses/ames/whiskey-tortoise-with-riesling?w=wide",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/f132121b1cd9d1fe66df7fba81e8792a0f948f24", 
     alt: "Ames frame",
     price: "$145",
     dimensions: "138mm x 145mm"
@@ -331,7 +331,7 @@ const links: Record<string, FrameImage> = {
   "Eloide": {
     frame: "Eloide",
     url: "https://www.warbyparker.com/eyeglasses/elodie/pink-robin-tortoise?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/7d9f20f61ee0438b35204ab4a6d4508215f22341", 
     alt: "Eloide frame",
     price: "$95",
     dimensions: "137mm x 138mm"
@@ -339,7 +339,7 @@ const links: Record<string, FrameImage> = {
   "Minden": {
     frame: "Minden",
     url: "https://www.warbyparker.com/eyeglasses/minden/riesling-with-eggshell?w=medium",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/6ef47e16dab2b616cb814f88ed347e4c285c0204", 
     alt: "Minden frame",
     price: "$145",
     dimensions: "133mm x 137mm"
@@ -347,7 +347,7 @@ const links: Record<string, FrameImage> = {
   "Hartman": {
     frame: "Hartman",
     url: "https://www.warbyparker.com/eyeglasses/hartman/striped-cypress?w=wide",
-    cdnUrl:
+    cdnUrl: "https://i.warbycdn.com/s/c/9f82d87704c69b83abf4b3636ed0a5eb7d9c9a3d", 
     alt: "Hartman frame",
     price: "$95",
     dimensions: "139mm x 140mm"
