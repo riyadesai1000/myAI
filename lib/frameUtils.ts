@@ -352,20 +352,20 @@ const links: Record<string, FrameImage> = {
     price: "$95",
     dimensions: "139mm x 140mm"
   },
-   "Alden": {
-    frame: "Alden",
-    url: "https://www.warbyparker.com/eyeglasses/minden/riesling-with-eggshell?w=medium",
-    cdnUrl: "https://i.warbycdn.com/s/c/6ef47e16dab2b616cb814f88ed347e4c285c0204", 
-    alt: "Alden frame",
+   "Abe": {
+    frame: "Abe",
+    url: "https://www.warbyparker.com/eyeglasses/abe/polished-gold?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/61f28065954bc272dc9f02ddfdf26d432ca5a26e", 
+    alt: "Abe frame",
     price: "$145",
-    dimensions: "133mm x 137mm"
+    dimensions: "140mm x 150mm"
   },
-  "Cortez": {
-    frame: "Cortez",
-    url: "https://www.warbyparker.com/eyeglasses/hartman/striped-cypress?w=wide",
-    cdnUrl: "https://i.warbycdn.com/s/c/9f82d87704c69b83abf4b3636ed0a5eb7d9c9a3d", 
-    alt: "Cortez frame",
-    price: "$95",
+  "Duncan": {
+    frame: "Duncan",
+    url: "https://www.warbyparker.com/eyeglasses/duncan/oak-barrel-with-riesling?w=medium",
+    cdnUrl: "https://i.warbycdn.com/s/c/fedeb8619bb2cd5bcfebd3427f6d37d90a05b479", 
+    alt: "Duncan frame",
+    price: "$145",
     dimensions: "139mm x 140mm"
   },
 };
