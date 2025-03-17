@@ -5,9 +5,9 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CitationCircle } from "@/components/chat/citation"; 
+import { CitationCircle } from "@/components/chat/citation"; // adjust path as needed
 
-// Updated renderCitations function
+// Updated renderCitations function that replaces markers like [1] with CitationCircle components
 export function renderCitations(content: React.ReactNode, citations?: any[]) {
   if (!citations || citations.length === 0) return content;
 
@@ -32,11 +32,11 @@ export function renderCitations(content: React.ReactNode, citations?: any[]) {
 }
 
 export function Formatting({ message }: { message: DisplayMessage }) {
-  // You can replace preprocessLaTeX(message.content) with message.content if not needed.
+  // Optionally, you can preprocess LaTeX if needed:
   const processedContent = message.content;
 
   const components = {
-    code: ({ children, className, node, ...rest }: any) => {
+    code: ({ children, className, ...rest }: any) => {
       const match = /language-(\w+)/.exec(className || "");
       return match ? (
         <SyntaxHighlighter
@@ -56,11 +56,7 @@ export function Formatting({ message }: { message: DisplayMessage }) {
       return <p>{renderCitations(children, message.citations)}</p>;
     },
     strong: ({ children }: { children: React.ReactNode }) => {
-      return (
-        <strong>
-          {renderCitations(children, message.citations)}
-        </strong>
-      );
+      return <strong>{renderCitations(children, message.citations)}</strong>;
     },
     li: ({ children }: { children: React.ReactNode }) => {
       return <li>{renderCitations(children, message.citations)}</li>;
@@ -75,7 +71,5 @@ export function Formatting({ message }: { message: DisplayMessage }) {
       className="gap-3 flex flex-col"
     >
       {processedContent}
-    </ReactMarkdown>
-  );
-}
+
 
