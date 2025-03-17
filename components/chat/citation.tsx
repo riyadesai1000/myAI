@@ -26,7 +26,7 @@ export function CitationCircle({
   const hasSourceDescription = citation.source_description.trim() !== "";
 
   return (
-    <Tooltip
+    <(Tooltip as any)
       title=""
       position="bottom"
       trigger="mouseenter"
@@ -52,8 +52,9 @@ export function CitationCircle({
       <span className="cursor-pointer bg-gray-200 rounded-full px-2 py-1">
         [{number}]
       </span>
-    </Tooltip>
+    </(Tooltip as any)>
   );
 }
 
 export default CitationCircle;
+
