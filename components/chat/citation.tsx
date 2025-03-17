@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Citation } from "@/types";
 import { Tooltip } from "react-tippy";
 import Link from "next/link";
@@ -13,8 +12,6 @@ export function CitationCircle({
   number: number;
   citation: Citation;
 }) {
-  const [open, setOpen] = useState(false);
-
   const isValidUrl = (url: string) => {
     try {
       new URL(url);
@@ -23,22 +20,20 @@ export function CitationCircle({
       return false;
     }
   };
+
   const hasSourceUrl = isValidUrl(citation.source_url);
   const hasSourceDescription = citation.source_description.trim() !== "";
 
   return (
     <Tooltip
       title=""
-      open={open}
-      onRequestClose={() => setOpen(false)}
       position="bottom"
-      // @ts-expect-error tippy docs allow this
       trigger="mouseenter click"
       interactive={true}
       html={
-        <div className="bg-white p-2 rounded-md shadow-sm flex flex-col justify-center border-[1px] border-gray-200">
+        <div className="bg-white p-2 rounded-md shadow-sm flex flex-col justify-center border border-gray-200">
           <p>
-            {hasSourceUrl && (
+            {hasSourceUrl ? (
               <Link
                 href={citation.source_url}
                 target="_blank"
@@ -46,12 +41,17 @@ export function CitationCircle({
               >
                 {citation.source_description}
               </Link>
+            ) : (
+              citation.source_description || EMPTY_CITATION_MESSAGE
             )}
-            {!hasSourceUrl && citation.source_description}
-            {!hasSourceUrl && !hasSourceDescription && EMPTY_CITATION_MESSAGE}
           </p>
         </div>
       }
-    ></Tooltip>
+    >
+      <span className="cursor-pointer bg-gray-200 rounded-full px-2 py-1">
+        [{number}]
+      </span>
+    </Tooltip>
   );
 }
+
