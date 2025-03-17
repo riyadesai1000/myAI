@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
+import React from "react";
 
 interface ChatInputProps {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -19,11 +19,15 @@ export default function ChatInput({
   setInput,
   isLoading,
 }: ChatInputProps) {
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+    handleInputChange(e);
+  };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleSubmit(e);
-    setInput(""); // Automatically clear the input field after submission
+    setInput(""); // Clear the input after submission
   };
 
   return (
@@ -32,7 +36,7 @@ export default function ChatInput({
         <input
           type="text"
           value={input}
-          onChange={handleInputChange}
+          onChange={onInputChange}
           placeholder="Ask more about Warby Parker here!"
           disabled={isLoading}
           className="flex-grow p-2 border rounded bg-transparent placeholder-gray-500 dark:placeholder-gray-400"
@@ -48,7 +52,6 @@ export default function ChatInput({
     </div>
   );
 }
-
 
 
 
