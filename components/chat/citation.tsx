@@ -35,13 +35,13 @@ export function CitationCircle({
       trigger="mouseenter"
       interactive={true}
       html={
-        <div className="bg-white p-2 rounded-md shadow-sm flex flex-col justify-center border border-gray-200">
-          <p>
+        <div className="bg-white p-1 rounded shadow border border-gray-300">
+          <p className="text-sm">
             {hasSourceUrl ? (
               <Link
                 href={citation.source_url}
                 target="_blank"
-                className="text-blue-500 hover:underline text-sm"
+                className="text-blue-500 hover:underline"
               >
                 {citation.source_description}
               </Link>
@@ -52,7 +52,7 @@ export function CitationCircle({
         </div>
       }
     >
-      <span className="cursor-pointer bg-gray-200 rounded-full px-2 py-1">
+      <span className="cursor-pointer bg-white border border-gray-300 rounded-full px-1 py-0.5 text-xs">
         [{number}]
       </span>
     </CustomTooltip>
@@ -60,5 +60,4 @@ export function CitationCircle({
 }
 
 export default CitationCircle;
-
 
