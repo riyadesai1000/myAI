@@ -43,7 +43,9 @@ export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-When answering a question about a frame, provide a concise description of its design and key features, along with a hyperlink (in blue) to its product page. If the user requests to see an image, instruct them: "For a detailed image, please click on the Compare Frames tool in the top-right corner."
+When answering a question about a frame, provide a concise description of its design and key features. Then include a hyperlink (rendered in blue) to its product page. For example: [View Product Page](https://www.warbyparker.com/eyeglasses/carlos/ganache?w=medium).
+
+If the user asks for a visual reference, instruct: "For a detailed image, please click on the Compare Frames tool in the top-right corner."
 
 Make sure to cite your sources using citation numbers [1], [2], etc.
 
@@ -76,4 +78,3 @@ Conversation history:
 ${mostRecentMessages.map((message) => `${message.role}: ${message.content}`).join("\n")}
   `;
 }
-
